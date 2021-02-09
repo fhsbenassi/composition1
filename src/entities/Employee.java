@@ -70,19 +70,21 @@ public class Employee {
 	public void removeContract(Contract contrato) {
 		this.contracts.remove(contrato);
 	}
-
+	
+	
+	// Calculate the income with salary and benefits	
 	public double income(int ano, int mes) {
 		double sum = salariobase;
 		Calendar cal = Calendar.getInstance();
 
-		for (Contract c : contracts) {
+		for (Contract contrato : contracts) {
 
-			cal.setTime(c.getDate());
+			cal.setTime(contrato.getDate());
 			int c_year = cal.get(Calendar.YEAR);
 			int c_mont = cal.get(Calendar.MONTH) + 1;
 
 			if (ano == c_year && mes == c_mont) {
-				sum += c.totalValue();
+				sum += contrato.totalValue();
 			}
 
 		}

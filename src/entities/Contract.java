@@ -11,7 +11,6 @@ public class Contract {
 	
 	// constructor
 	public Contract(Date date, Double valueperhour, Integer hours) {
-		super();
 		this.date = date;
 		this.valueperhour = valueperhour;
 		this.hours = hours;
